@@ -1,5 +1,6 @@
 <div>
   <h3>{{ playlist.name }}</h3>
+  <pre>{{addToPlaylistForm | json}}</pre>
     <form class="form-horizontal" name="addToPlaylistForm">
     <fieldset>
       <legend>Add Song</legend>
@@ -13,12 +14,12 @@
      		</select>
      		</div>
      		<div>
-     		 <select class="form-control" ng-model="albumSelector">
+     		 <select class="form-control" ng-show="addToPlaylistForm.artistSelect.$dirty" ng-model="albumSelector" name="albumSelect">
      			<option ng-repeat="album in artist.albums">{{album.name}}</option>
      		</select>
      		</div>
      		<div>
-		    <select class="form-control" ng-model="songSelector">
+		    <select class="form-control" ng-model="songSelector" ng-show="addToPlaylistForm.albumSelect.$dirty" name="songSelect">
 			<option ng-repeat="song in album.songs">{{song.name}}</option>
      		</select>
      		</div>

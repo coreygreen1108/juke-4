@@ -30,4 +30,6 @@ juke.controller('playlistCtrl', function($scope, PlaylistFactory, ArtistFactory,
 		console.log(artists);
 		$scope.artists = artists;
 	})
+
+	$scope.artist = $scope.artistSelector;
 })
